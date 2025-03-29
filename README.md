@@ -26,9 +26,9 @@ Installation
 <b>API DOCUMENTATION</b>
 base URL = http://localhost:3000
 GET /users        = GET ALL
-GET /users/:id    = GET ONE BY ID
-POST /users       = CREATE ONE
-DELETE /users/:id = DELETE ONE BY ID
+GET /users/:id    = GET BY ID
+POST /users       = CREATE
+DELETE /users/:id = DELETE BY ID
 
 <b>TESTING</b>
 1. Open Thunder Client or PostMan
