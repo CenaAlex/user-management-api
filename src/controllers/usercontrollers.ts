@@ -9,13 +9,14 @@ export const deleteUser = (req: Request, res: Response) => {
     res.json({ message: "User deleted" });
 }
 
-export const createUser = async (req: Request, res: Response) => {
-    const newUser = await userRepository.create({
-        name : req.body.name,
-        email : req.body.email,
-        password : req.body.password
-    });
+// GET ALL USERS
+export const getAllUsers = async (req: Request, res: Response) => {
+    const users = await userRepository.find();
+    res.json({ message: "User List", users });
+};
 
-    await userRepository.save(newUser);
-    res.json ({message: "User Created", user : JSON.stringify(req.body)});
-}
+// GET USER BY ID
+export const getUserById = async (req: Request, res: Response) => {
+    const user = await userRepository.findOneBy({ id: parseInt(req.params.id) });
+    res.json({ message: "User Found", user });
+};
