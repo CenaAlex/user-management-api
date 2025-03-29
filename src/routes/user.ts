@@ -4,8 +4,6 @@ import { getAllUsers, getUserById } from "../controllers/usercontrollers.js";
 
 export const userRouter = Router()
 
-//DELETE ONE USER
-userRouter.delete('/:id', deleteUser)
 
 // GET ALL USERS
 userRouter.get("/", getAllUsers);
