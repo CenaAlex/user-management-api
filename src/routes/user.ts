@@ -1,11 +1,18 @@
 import { Router } from "express"
-import {createUser} from "../controllers/usercontrollers";
-import  {deleteUser}  from "../controllers/user.controllers"
+import { createUser, deleteUser, getAllUsers, getUserById } from "../controllers/usercontrollers";
 
-export const userRouter = Router()
+const userRouter = Router();
 
 // CREATE USER
 userRouter.post('/', createUser);
 
 //DELETE ONE USER
-userRouter.delete('/:id', deleteUser)
+userRouter.delete('/:id', deleteUser);
+
+// GET ALL USERS
+userRouter.get("/", getAllUsers);
+
+// GET ONE USER BY ID
+userRouter.get('/:id', getUserById as any);
+
+export { userRouter };
